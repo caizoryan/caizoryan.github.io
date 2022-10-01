@@ -370,14 +370,14 @@ const s = (p) => {
   };
 
   $("#getVal").click(function () {
-    source = $("#source").val();
-    destination = $("#destination").val();
+    source = $("#source").val().toLowerCase();
+    destination = $("#destination").val().toLowerCase();
     p.reset();
     shortestPath(graph.peek(), source, destination);
     p.renderDivs(graph.peek());
   });
   $("#nodeButton").click(function () {
-    input = $("#nodes").val();
+    input = $("#nodes").val().toLowerCase();
     p.reset();
     p.search(input);
     // shortestPath(graph.peek(), source, destination);
