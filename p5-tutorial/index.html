@@ -19,7 +19,9 @@
       <div class="header">
         How to replicate <span>'Website Comes Alive on Scroll'</span>,<br />
         <span id="mindy"><span id="from">from</span> Mindy Seu's</span>
-        <a href="https://cyberfeminismindex.com/">Cyber Feminism Index</a>
+        <a class="link" href="https://cyberfeminismindex.com/"
+          >Cyber Feminism Index</a
+        >
       </div>
       <p>
         I was looking at the Cyber Feminism index designed and coded by Mindy
@@ -40,7 +42,8 @@
         It would work on any website you have, the only requirement would be to
         have enough content to scroll through. I don't have enough content to
         scroll through, so I just searched up cat names and made a listt of cat
-        names. You can download the starter html/css/js file here.
+        names. You can download the starter html/css/js file
+        <a class="link" href="demo.zip">here</a>
       </p>
       <p>
         Once we have this setup, let's open up the JavaScript file and see what
@@ -83,7 +86,9 @@
       <p>
         To get started, our first step would be to figure out if the user is
         scrolling. To do this, we can use the
-        <a href="https://www.w3schools.com/jsref/event_onscroll.asp"
+        <a
+          class="link"
+          href="https://www.w3schools.com/jsref/event_onscroll.asp"
           >onscroll event</a
         >
       </p>
@@ -101,7 +106,7 @@
       <p>
         Then in our setup() function, let's reassign this variable a p5 color
         datatype using
-        <a href="https://p5js.org/reference/#/p5/color">color()</a>
+        <a class="link" href="https://p5js.org/reference/#/p5/color">color()</a>
       </p>
       <pre><code class="js">function setup() {
           var canvas = createCanvas(windowWidth, windowHeight);
@@ -132,7 +137,9 @@
       <p>
         We can make the background color change, but we don't want that, do we?
         Let's see how we can make this a gradient. Let's use
-        <a href="https://editor.p5js.org/REAS/sketches/S1TNUPzim">this</a>
+        <a class="link" href="https://editor.p5js.org/REAS/sketches/S1TNUPzim"
+          >this</a
+        >
         example to make a gradient function.
       </p>
       <pre><code class="js">function setGradient(c1, c2) {
@@ -145,10 +152,14 @@
       }</code></pre>
       <p>
         We use the
-        <a href="https://p5js.org/reference/#/p5/lerpColor">lerpColor()</a>
+        <a class="link" href="https://p5js.org/reference/#/p5/lerpColor"
+          >lerpColor()</a
+        >
         which is a function to blend between colors. Then we write a loop to
         make a line every pixel and set the color of the line using the
-        <a href="https://p5js.org/reference/#/p5/lerpColor">lerpColor()</a>
+        <a class="link" href="https://p5js.org/reference/#/p5/lerpColor"
+          >lerpColor()</a
+        >
         function. Then we can add this function in the draw function to make a
         linear gradient.
       </p>
