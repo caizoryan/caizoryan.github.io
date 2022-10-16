@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/github.css"
+    />
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+
+    <title>P5 Tutorial</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        How to replicate <span>'Website Comes Alive on Scroll'</span>,<br />
+        <span id="mindy"><span id="from">from</span> Mindy Seu's</span>
+        <a href="https://cyberfeminismindex.com/">Cyber Feminism Index</a>
+      </div>
+      <p>
+        I was looking at the Cyber Feminism index designed and coded by Mindy
+        Seu (if I am not wrong) and I thought it would be fun to try and
+        recreate it using p5.js (the site uses vanilla JavaScript and CSS to
+        achieve this)
+      </p>
+      <img
+        style="width: 600px; margin: 20px 40px 60px 40px"
+        src="gif.gif"
+        alt=""
+      />
+      <p>Essentially, the logic is super simple</p>
+      <img style="width: 600px; margin: 20px 40px" src="logic.png" />
+      <div class="subhead">Setup</div>
+      <p>
+        But before we get to that, we would need a website to implement this on.
+        It would work on any website you have, the only requirement would be to
+        have enough content to scroll through. I don't have enough content to
+        scroll through, so I just searched up cat names and made a listt of cat
+        names. You can download the starter html/css/js file here.
+      </p>
+      <p>
+        Once we have this setup, let's open up the JavaScript file and see what
+        we have.
+      </p>
+      <pre>
+        <code class="js">
+          function setup() {
+            var canvas = createCanvas(windowWidth, windowHeight);
+            canvas.parent("p5");
+          }
+        </code>
+      </pre>
+      <p>In our setup function →</p>
+      <ul>
+        <li>
+          We create a canvas as big as the window size using windowWidth and
+          windowHeight
+        </li>
+        <li>
+          We attach our script to a DOM element, so we can style it using CSS
+        </li>
+      </ul>
+      <div class="subhead">Styling</div>
+      <pre><code class="language-css">#p5 {
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+      }</code></pre>
+      <p>Styling for our sketch—</p>
+      <ul>
+        <li>We make the position fixed, so it acts as a background</li>
+        <li>Put it behind everything else using z-index : -1;</li>
+        <li>Make sure it starts at top left and is as big as the window</li>
+      </ul>
+      <div class="subhead">Find if user is scrolling</div>
+      <p>
+        To get started, our first step would be to figure out if the user is
+        scrolling. To do this, we can use the
+        <a href="https://www.w3schools.com/jsref/event_onscroll.asp"
+          >onscroll event</a
+        >
+      </p>
+      <pre><code class="js">document.onscroll = () => {
+        console.log('The user scrolled')
+      }</code></pre>
+      <p>If you open up your console, you can see it works</p>
+      <div class="subhead">Do something when the user scrolls</div>
+      <p>
+        For starters, we could turn the background color to something else when
+        the user scrolls. To do this, let's first create a variable to hold this
+        value.
+      </p>
+      <pre><code class="js">var bg;</code></pre>
+      <p>
+        Then in our setup() function, let's reassign this variable a p5 color
+        datatype using
+        <a href="https://p5js.org/reference/#/p5/color">color()</a>
+      </p>
+      <pre><code class="js">function setup() {
+          var canvas = createCanvas(windowWidth, windowHeight);
+          canvas.parent("p5");
+          
+          // assign it white color
+          bg = color(255);
+        }</code></pre>
+      <p>
+        and then update our draw() function to use this variable as the color
+      </p>
+      <pre><code class="js">function draw() {
+          background(bg);
+        }</code></pre>
+      <p>
+        and finally, we can update our event function to change the bg variable
+      </p>
+      <pre><code class="js">document.onscroll = () => {
+        bg = color(200, 100, 100);
+      }
+      </code></pre>
+      <p>
+        Now if you scroll on your website, the color will instantly change to
+        Maroon
+      </p>
+      <img src="first.png" alt="" />
+      <div class="subhead">Add Gradient</div>
+      <p>
+        We can make the background color change, but we don't want that, do we?
+        Let's see how we can make this a gradient. Let's use
+        <a href="https://editor.p5js.org/REAS/sketches/S1TNUPzim">this</a>
+        example to make a gradient function.
+      </p>
+      <pre><code class="js">function setGradient(c1, c2) {
+        for (var y = 0; y < height; y++) {
+          var inter = map(y, 0, height, 0, 1);
+          var c = lerpColor(c1, c2, inter);
+          stroke(c);
+          line(0, y, width, y);
+        }
+      }</code></pre>
+      <p>
+        We use the
+        <a href="https://p5js.org/reference/#/p5/lerpColor">lerpColor()</a>
+        which is a function to blend between colors. Then we write a loop to
+        make a line every pixel and set the color of the line using the
+        <a href="https://p5js.org/reference/#/p5/lerpColor">lerpColor()</a>
+        function. Then we can add this function in the draw function to make a
+        linear gradient.
+      </p>
+      <pre><code class="js">
+        function draw() {
+          setGradient(color(0), color(255));
+        }
+      </code></pre>
+      <p>This ends up being the result</p>
+      <img src="grey.png" alt="" />
+      <p>
+        The way we can make this gradient appear when the user scrolls is by
+        setting the first color to a variable—then changing it when the user
+        scrolls.
+      </p>
+      <pre><code class="js">let color1;
+
+        function setup() {
+          var canvas = createCanvas(windowWidth, windowHeight);
+          canvas.parent("p5");
+          
+          // set color to white first
+          color1 = color(255);
+        }
+          
+        function draw() {
+          setGradient(color1, color(255));
+        }</code></pre>
+      <p>We can change this color to some other color when the user scrolls.</p>
+      <pre><code class="js">document.onscroll = () => {
+        color1 = color(239, 138, 197);
+      };</code></pre>
+      <p>Now when we scroll we have this nice pretty gradient</p>
+      <img src="pink.png" alt="" />
+      <p>
+        Although, this doesn't go away when you stop scrolling. To do that, we
+        can use setTimeout. We can create a variable to see if user is scrolling
+        or not. If the user is scrolling and the variable is false, we turn it
+        true. Then we set a timeout to turn it false, however if the user is
+        still scrolling it will be set to true again. We can then use this value
+        to turn the gradient on or off.
+      </p>
+      <p>Let's start by creating the variable.</p>
+      <pre><code class="js">let isScrolling = false</code></pre>
+      <p>Then we turn it true when the user scrolls.</p>
+      <pre><code class="js">document.onscroll = () => {
+        if(!isScrolling) {
+          isScrolling = true
+        }
+      };</code></pre>
+
+      <p>Add a setTimeout to turn it off</p>
+
+      <pre><code class="js">document.onscroll = () => {
+        if(!isScrolling) {
+          isScrolling = true
+          setTimeout(() => {
+            isScrolling = false
+          }, 1000);
+        }
+      };</code></pre>
+
+      <p>Make sure the gradient color only appears when user is scrolling.</p>
+      <pre><code class="js">
+        function draw() {
+          if(isScrolling) color1 = color(239, 138, 197);
+          else color1 = color(255);
+          setGradient(color1, color(255));
+        }
+      </code></pre>
+      <p>
+        Now the gradient will show when the user scrolls and disappear after a
+        second of inactivity.
+      </p>
+
+      <div class="subhead">Fading it</div>
+      <p>
+        Even though we have a pretty gradient, it doesn't look very nice. Let's
+        try and implement a smooth fade in and out.
+      </p>
+      <p>
+        To create a fade, we can use a setInterval function and once again use
+        our lerpColor() as well.
+      </p>
+      <p>
+        What we would be doing is slowly blending the color from white to our
+        destination color, and it would appear as if the color is fading in.
+      </p>
+      <p>This is what our fadeIn() function should look like</p>
+
+      <pre><code class="js">function fadeIn() {
+        setInterval(() => {
+          color1 = lerpColor(color1, destinationColor, c);
+          c += 0.05;
+          }, 100);
+      }</code></pre>
+      <p>and then we call it when scrolling is triggered</p>
+      <pre><code class="js">
+        function draw() {
+          if (isScrolling) fadeIn();
+          else color1 = color(255);
+          setGradient(color1, color(255));
+        }
+      </code></pre>
+      <p>
+        This works for the first time we scroll, but then the interval keeps
+        running and our variable c which is responsible for the fade keeps going
+        up and up. We need a way to clear the interval and set the c variable to
+        0.
+      </p>
+      <p>
+        We could do that in our fadeOut() function. To do that, first we need to
+        assign the interval to a variable.
+      </p>
+      <pre><code class="js">
+        let interval;
+
+function fadeIn() {
+	interval = setInterval(() => {
+		color1 = lerpColor(color1, destinationColor, c);
+		c += 0.05;
+		}, 100);
+}
+      </code></pre>
+      <p>
+        Let's also make sure that we only run the fadeIn() only once. To keep
+        track if we have faded in or not lets create a variable. We can set it
+        to true once the animation has initialized. We can set it back to false
+        when we are fading out.
+      </p>
+
+      <pre><code class="js">let animate = false;
+function fadeIn() {
+	if (!animated) {
+		animated = true;
+		interval = setInterval(() => {
+			color1 = lerpColor(color1, destinationColor, c);
+			c += 0.05;
+		}, 50);
+	}
+}</code></pre>
+
+      <p>This is how our fadeOut() function ends up looking</p>
+
+      <pre><code class="js">
+        function fadeOut() {
+          clearInterval(interval);
+          c = 0;
+          
+          interval = setInterval(() => {
+            color1 = lerpColor(color1, color(255), c);
+            c += 0.05;
+          }, 30);
+        }
+      </code></pre>
+      <p>
+        Let's also make sure once we fade out, the function takes care of its
+        own clean up by clearing the interval, setting c to 0 and setting
+        animated to false so fadeIn() can run next time the user scrolls.
+      </p>
+
+      <pre><code class="js">function fadeOut() {
+        clearInterval(interval);
+        c = 0;
+        
+        interval = setInterval(() => {
+          color1 = lerpColor(color1, color(255), c);
+          c += 0.05;
+          
+          if (c > 0.95) {
+            clearInterval(interval);
+            c = 0;
+            animated = false;
+          }
+        }, 30);
+      }</code></pre>
+      <p>
+        Finally, let's make sure that fadeOut() only runs after fade in has
+        completed. To check that we can use the c variable. If c is 1 or greater
+        it would mean the fade is complete.
+      </p>
+      <pre><code class="js">if (c > 0.95 && !isScrolling) fadeOut();</code></pre>
+
+      <p>Our final file should look somewhat like this.</p>
+
+      <pre><code class="js">let color1, destinationColor, interval;
+let isScrolling = false;
+let c = 0;
+let animated = false;
+
+function setup() {
+	var canvas = createCanvas(windowWidth, windowHeight);
+	canvas.parent("p5");
+
+	color1 = color(255);
+	destinationColor = color(239, 138, 197);
+}
+
+function draw() {
+	if (isScrolling) fadeIn();
+	if (c > 0.95 && !isScrolling) fadeOut();
+	setGradient(color1, color(255));
+}
+
+function fadeOut() {
+	clearInterval(interval);
+	c = 0;
+	interval = setInterval(() => {
+		color1 = lerpColor(color1, color(255), c);
+		c += 0.05;
+		if (c > 0.95) {
+			clearInterval(interval);
+			c = 0;
+			animated = false;
+		}
+	}, 30);
+}
+
+function fadeIn() {
+	if (!animated) {
+		animated = true;
+		interval = setInterval(() => {
+			color1 = lerpColor(color1, destinationColor, c);
+			c += 0.05;
+		}, 50);
+	}
+}
+
+function setGradient(c1, c2) {
+	for (var y = 0; y < height; y++) {
+		var inter = map(y, 0, height, 0, 1);
+		var c = lerpColor(c1, c2, inter);
+		stroke(c);
+		line(0, y, width, y);
+	}
+}
+
+document.onscroll = () => {
+	if (!isScrolling) {
+		isScrolling = true;
+		setTimeout(() => {
+			isScrolling = false;
+		}, 1000);
+	}
+};</code></pre>
+    </div>
+  </body>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</html>
