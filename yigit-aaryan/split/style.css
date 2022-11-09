@@ -1,0 +1,52 @@
+html,
+body {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+#sketch1 {
+  width: 40vw;
+  height: 100vh;
+}
+
+#sketch2 {
+  width: 40vw;
+  height: 100vh;
+}
+
+.menu {
+  width: 15vw;
+  padding: 10px;
+}
+
+input {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 90%; /* Full-width */
+  height: 15px; /* Specified height */
+  background: #000000; /* Grey background */
+  outline: none; /* Remove outline */
+}
+
+button {
+  all: unset;
+  text-transform: lowercase;
+  border: 1px solid black;
+  padding: 5px 10px;
+  margin-top: 20px;
+  border-radius: 100px;
+}
+
+button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}

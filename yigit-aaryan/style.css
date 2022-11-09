@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  font-family: "Space Mono", monospace;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a :visited {
+  text-decoration: none;
+}
+
+h1 {
+  /* padding-top: 50vh; */
+  font-size: 12pt;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  height: 50vh;
+  text-align: center;
+  font-size: 50px;
+  transition: 700ms;
+}
+
+.container :hover {
+  background-color: black;
+  color: white;
+}
