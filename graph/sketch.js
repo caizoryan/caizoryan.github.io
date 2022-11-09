@@ -434,8 +434,8 @@ const s = (p) => {
     destination = $("#destination").val().toLowerCase();
     p.reset();
     console.log(findPath(graph.peek(), source, destination));
-    // shortestPath(graph.peek(), source, destination);
-    // p.renderDivs(graph.peek());
+    shortestPath(graph.peek(), source, destination);
+    p.renderDivs(graph.peek());
   });
   $("#nodeButton").click(function () {
     input = $("#nodes").val().toLowerCase();
