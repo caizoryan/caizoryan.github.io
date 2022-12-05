@@ -310,6 +310,96 @@ let data = [
     transcript: "",
     visited: false,
   },
+
+  // sophia
+  {
+    file: "videos/02SOEM.mp4",
+    tag: "empathy",
+    question: "What contributes to having a long engaging conversation?",
+    person: "s",
+    transcript: "",
+    visited: false,
+  },
+  {
+    file: "videos/03SOTH.mp4",
+    tag: "thinking",
+    question:
+      "Is critical thinking necessary to have an engaging conversation?",
+    person: "s",
+    transcript: "",
+    visited: false,
+  },
+  {
+    file: "videos/04SOEM.mp4",
+    tag: "empathy",
+    question:
+      "Is critical thinking necessary to have an engaging conversation?",
+    person: "s",
+    transcript: "",
+    visited: false,
+  },
+  {
+    file: "videos/05SOTH.mp4",
+    tag: "thinking",
+    question:
+      "Is empathy the most important factor to have an engaging conversation?",
+    person: "s",
+    transcript: "",
+    visited: false,
+  },
+  {
+    file: "videos/06SOEM.mp4",
+    tag: "empathy",
+    question:
+      "Is empathy the most important factor to have an engaging conversation?",
+    person: "s",
+    transcript: "",
+    visited: false,
+  },
+  {
+    file: "videos/07SOART.mp4",
+    tag: "art",
+    question: "Is art and design a form of conversation?",
+    person: "s",
+    transcript: "",
+    visited: false,
+  },
+  {
+    file: "videos/08SOLAART.mp4",
+    tag: "language",
+    question:
+      "Is art and design more ambiguous as a form of conversation than language?",
+    person: "s",
+    transcript: "",
+    visited: false,
+  },
+  {
+    file: "videos/09SOART.mp4",
+    tag: "language",
+    question:
+      "Is art and design more ambiguous as a form of conversation than language?",
+    person: "s",
+    transcript: "",
+    visited: false,
+  },
+  {
+    file: "videos/10SOEM.mp4",
+    tag: "empathy",
+    question:
+      "In your conversations, when do you feel like you have been understood by the person you are conversing with?",
+    person: "s",
+    transcript: "",
+    visited: false,
+  },
+  {
+    file: "videos/11SOTH.mp4",
+    tag: "thinking",
+    question:
+      "Do you feel your thoughts and ideas change while you are in a conversation with someone?",
+    person: "s",
+    transcript: "",
+    visited: false,
+  },
 ];
 
 function changeVideo(index) {
