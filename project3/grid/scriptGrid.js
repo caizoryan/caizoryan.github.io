@@ -243,22 +243,6 @@ let data = [
     visited: false,
   },
   {
-    file: "../videos/08AMDEOP.mp4",
-    tag: "open-minded",
-    question: "Why do you love conversation, Conclusion?",
-    person: "o",
-    transcript: "",
-    visited: false,
-  },
-  {
-    file: "../videos/08AMDEOP.mp4",
-    tag: "debate",
-    question: "Why do you love conversation, Conclusion?",
-    person: "o",
-    transcript: "",
-    visited: false,
-  },
-  {
     file: "../videos/10AMCU.mp4",
     tag: "open-minded",
     question: "Why do you love conversation, Conclusion?",
