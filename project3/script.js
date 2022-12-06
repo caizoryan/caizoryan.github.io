@@ -1,15 +1,11 @@
-var myPlayer = videojs("my-video");
-let tags = [];
-var audio = new Audio("../click.mp3");
-
-let data = [
+const data = [
   //Omama
   {
     file: "videos/01OMPE.mp4",
     tag: "people",
     question: "Why Do you love conversation, Opening",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -17,7 +13,7 @@ let data = [
     tag: "connection",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -25,7 +21,7 @@ let data = [
     tag: "language",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -33,7 +29,7 @@ let data = [
     tag: "change",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -41,7 +37,7 @@ let data = [
     tag: "connection",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -49,7 +45,7 @@ let data = [
     tag: "culture",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -57,7 +53,7 @@ let data = [
     tag: "bad conversation",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -65,7 +61,7 @@ let data = [
     tag: "people",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -73,7 +69,7 @@ let data = [
     tag: "open-minded",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -81,7 +77,7 @@ let data = [
     tag: "empathy",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -89,7 +85,7 @@ let data = [
     tag: "language",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -97,7 +93,7 @@ let data = [
     tag: "language",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -105,7 +101,7 @@ let data = [
     tag: "art",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -113,7 +109,7 @@ let data = [
     tag: "art",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -121,7 +117,7 @@ let data = [
     tag: "art",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -129,7 +125,7 @@ let data = [
     tag: "language",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -137,7 +133,7 @@ let data = [
     tag: "empathy",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -145,7 +141,7 @@ let data = [
     tag: "language",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -153,7 +149,7 @@ let data = [
     tag: "art",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -161,7 +157,7 @@ let data = [
     tag: "thinking",
     question: "What contributes to having a long engaging conversation?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -169,7 +165,7 @@ let data = [
     tag: "people",
     question: "Why do you love conversation, Conclusion?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
 
@@ -178,7 +174,7 @@ let data = [
     tag: "debate",
     question: "Why do you love conversation? Opening",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -186,7 +182,7 @@ let data = [
     tag: "bad conversation",
     question: "Why do you love conversation? Opening",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -194,7 +190,7 @@ let data = [
     tag: "people",
     question: "Why do you love conversation? Opening",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -202,7 +198,7 @@ let data = [
     tag: "culture",
     question: "Why do you love conversation? Opening",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
 
@@ -211,7 +207,7 @@ let data = [
     tag: "change",
     question: "Why do you love conversation, Conclusion?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -219,7 +215,7 @@ let data = [
     tag: "people",
     question: "Why do you love conversation, Conclusion?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -227,7 +223,7 @@ let data = [
     tag: "thinking",
     question: "Why do you love conversation, Conclusion?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -235,7 +231,7 @@ let data = [
     tag: "debate",
     question: "Why do you love conversation, Conclusion?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -243,7 +239,7 @@ let data = [
     tag: "open-minded",
     question: "Why do you love conversation, Conclusion?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -251,7 +247,7 @@ let data = [
     tag: "open-minded",
     question: "Why do you love conversation, Conclusion?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -259,7 +255,7 @@ let data = [
     tag: "language",
     question: "Why do you love conversation, Conclusion?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -267,7 +263,7 @@ let data = [
     tag: "language",
     question: "Why do you love conversation, Conclusion?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -275,7 +271,7 @@ let data = [
     tag: "culture",
     question: "Why do you love conversation, Conclusion?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -283,7 +279,7 @@ let data = [
     tag: "language",
     question: "Why do you love conversation, Conclusion?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -291,7 +287,7 @@ let data = [
     tag: "art",
     question: "Why do you love conversation, Conclusion?",
     person: "o",
-    transcript: "",
+    index: 0,
     visited: false,
   },
 
@@ -301,7 +297,7 @@ let data = [
     tag: "empathy",
     question: "What contributes to having a long engaging conversation?",
     person: "s",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -310,7 +306,7 @@ let data = [
     question:
       "Is critical thinking necessary to have an engaging conversation?",
     person: "s",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -319,7 +315,7 @@ let data = [
     question:
       "Is critical thinking necessary to have an engaging conversation?",
     person: "s",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -328,7 +324,7 @@ let data = [
     question:
       "Is empathy the most important factor to have an engaging conversation?",
     person: "s",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -337,7 +333,7 @@ let data = [
     question:
       "Is empathy the most important factor to have an engaging conversation?",
     person: "s",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -345,7 +341,7 @@ let data = [
     tag: "art",
     question: "Is art and design a form of conversation?",
     person: "s",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -354,7 +350,7 @@ let data = [
     question:
       "Is art and design more ambiguous as a form of conversation than language?",
     person: "s",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -363,7 +359,7 @@ let data = [
     question:
       "Is art and design more ambiguous as a form of conversation than language?",
     person: "s",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -372,7 +368,7 @@ let data = [
     question:
       "In your conversations, when do you feel like you have been understood by the person you are conversing with?",
     person: "s",
-    transcript: "",
+    index: 0,
     visited: false,
   },
   {
@@ -381,10 +377,23 @@ let data = [
     question:
       "Do you feel your thoughts and ideas change while you are in a conversation with someone?",
     person: "s",
-    transcript: "",
+    index: 0,
     visited: false,
   },
 ];
+
+var myPlayer = videojs("my-video");
+let tags = [];
+var audio = new Audio("../click.mp3");
+
+let currentIndex = 0;
+if (localStorage.getItem("currentIndex") === undefined) {
+  currentIndex = 0;
+} else currentIndex = localStorage.getItem("currentIndex");
+
+for (let i = 0; i < data.length; i++) {
+  data[i].index = i;
+}
 
 function changeVideo(index) {
   myPlayer.src({ type: "video/mp4", src: data[index].file });
@@ -415,24 +424,6 @@ function makeButtons() {
     document.querySelector(".tags").appendChild(btns[i]);
   }
 }
-
-// function to create buttons
-
-// function createStuff(index) {
-//   document.querySelector(".tags").innerHTML = "";
-//   myPlayer.src({ type: "video/mp4", src: data[index].file });
-//   let btns = [];
-//   for (let i = 0; i < data[index].connection.length; i++) {
-//     btns.push(document.createElement("p"));
-//     btns[i].innerHTML = data[index].connection[i];
-//     document.querySelector(".question").innerHTML = data[index].question;
-//     btns[i].classList.add("button-class");
-//     btns[i].addEventListener("click", () => {
-//       createStuff(look(data[index].connection[i]));
-//     });
-//     document.querySelector(".tags").appendChild(btns[i]);
-//   }
-// }
 
 function look(des) {
   let tags = [];
@@ -468,5 +459,5 @@ function soundMake() {
   audio.play();
 }
 
-changeVideo(0);
+changeVideo(currentIndex);
 makeButtons();
