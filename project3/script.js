@@ -418,8 +418,8 @@ function makeButtons() {
     btns[i].innerHTML = tags[i];
     btns[i].classList.add("button-class");
     btns[i].addEventListener("click", () => {
-      changeVideo(look(tags[i]));
       soundMake();
+      changeVideo(look(tags[i]));
     });
     document.querySelector(".tags").appendChild(btns[i]);
   }

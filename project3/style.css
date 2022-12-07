@@ -22,7 +22,6 @@ body {
   src: url("ari.woff2") format("woff2");
 }
 video {
-  width: 100%;
   height: 100%;
 }
 

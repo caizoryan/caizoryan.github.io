@@ -57,4 +57,29 @@ video {
 
 .box {
   width: 20vw;
+}
+
+.people {
+  font-family: font;
+  z-index: 200;
+  position: fixed;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+}
+.people .button-class {
+  min-width: 50px;
+  padding: 10px 30px;
+  font-size: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 5px;
+  color: rgba(250, 250, 250, 0.7);
+}
+.people .button-class:hover {
+  font-size: 15px;
+  color: rgb(250, 250, 250);
+  background-color: black;
 }/*# sourceMappingURL=style.css.map */

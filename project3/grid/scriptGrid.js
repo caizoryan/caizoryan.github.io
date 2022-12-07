@@ -1,4 +1,4 @@
-const data = [
+let root = [
   //Omama
   {
     file: "videos/01OMPE.mp4",
@@ -173,7 +173,7 @@ const data = [
     file: "videos/01AMDE.mp4",
     tag: "debate",
     question: "Why do you love conversation? Opening",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -181,7 +181,7 @@ const data = [
     file: "videos/02AMBAD.mp4",
     tag: "bad conversation",
     question: "Why do you love conversation? Opening",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -189,7 +189,7 @@ const data = [
     file: "videos/03AMPE.mp4",
     tag: "people",
     question: "Why do you love conversation? Opening",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -197,7 +197,7 @@ const data = [
     file: "videos/04AMCU.mp4",
     tag: "culture",
     question: "Why do you love conversation? Opening",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -206,7 +206,7 @@ const data = [
     file: "videos/05AMCH.mp4",
     tag: "change",
     question: "Why do you love conversation, Conclusion?",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -214,7 +214,7 @@ const data = [
     file: "videos/06AMPE.mp4",
     tag: "people",
     question: "Why do you love conversation, Conclusion?",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -222,7 +222,7 @@ const data = [
     file: "videos/07AMTHDEOP.mp4",
     tag: "thinking",
     question: "Why do you love conversation, Conclusion?",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -230,7 +230,7 @@ const data = [
     file: "videos/07AMTHDEOP.mp4",
     tag: "debate",
     question: "Why do you love conversation, Conclusion?",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -238,7 +238,7 @@ const data = [
     file: "videos/07AMTHDEOP.mp4",
     tag: "open-minded",
     question: "Why do you love conversation, Conclusion?",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -246,7 +246,7 @@ const data = [
     file: "videos/10AMCU.mp4",
     tag: "open-minded",
     question: "Why do you love conversation, Conclusion?",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -254,7 +254,7 @@ const data = [
     file: "videos/11AMLA.mp4",
     tag: "language",
     question: "Why do you love conversation, Conclusion?",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -262,7 +262,7 @@ const data = [
     file: "videos/12AMLACU.mp4",
     tag: "language",
     question: "Why do you love conversation, Conclusion?",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -270,7 +270,7 @@ const data = [
     file: "videos/12AMLACU.mp4",
     tag: "culture",
     question: "Why do you love conversation, Conclusion?",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -278,7 +278,7 @@ const data = [
     file: "videos/14AMLA.mp4",
     tag: "language",
     question: "Why do you love conversation, Conclusion?",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -286,7 +286,7 @@ const data = [
     file: "videos/15AMART.mp4",
     tag: "art",
     question: "Why do you love conversation, Conclusion?",
-    person: "o",
+    person: "a",
     index: 0,
     visited: false,
   },
@@ -382,6 +382,15 @@ const data = [
   },
 ];
 
+let data = root;
+
+const people = ["Room 642", "Gerrard St E", "Krispy Kreme"];
+const placeholderList = [
+  "videos/p1.mp4",
+  "videos/p2.mp4",
+  "videos/p3.mp4",
+  "videos/p4.mp4",
+];
 let currentIndex;
 
 var audio = new Audio("../click.mp3");
@@ -395,34 +404,89 @@ let tags = [];
 for (let i = 0; i < data.length; i++) {
   data[i].index = i;
 }
-shuffleArray(data);
 
 // make the buttons
-for (const x of data) if (!tags.includes(x.tag)) tags.push(x.tag);
-let btns = [];
-for (let i = 0; i < tags.length; i++) {
-  btns.push(document.createElement("p"));
-  btns[i].innerHTML = tags[i];
-  btns[i].classList.add("button-class");
-  // btns[i].addEventListener("mouseover", soundMake);
-  btns[i].addEventListener("mouseover", () => {
-    for (let r = 0; r < data.length; r++) {
-      document.querySelector(`#my-video${r}`).style.opacity = 0.1;
-      document.querySelector(`#my-video${r}`).style.zIndex = -10;
-      videojs(`my-video${r}`).muted(true);
-      soundMake();
-    }
+let btnsTags = [];
+function makeButtons() {
+  for (const x of data) if (!tags.includes(x.tag)) tags.push(x.tag);
+  for (let i = 0; i < tags.length; i++) {
+    btnsTags.push(document.createElement("p"));
+    btnsTags[i].innerHTML = tags[i];
+    btnsTags[i].classList.add("button-class");
+    btnsTags[i].addEventListener("mouseover", () => {
+      for (let r = 0; r < data.length; r++) {
+        document.querySelector(`#my-video${r}`).style.opacity = 0.1;
+        document.querySelector(`#my-video${r}`).style.zIndex = -10;
+        videojs(`my-video${r}`).muted(true);
+        setTimeout(() => {
+          videojs(`my-video${r}`).playbackRate(1);
+        }, 100);
+        soundMake();
+      }
 
-    for (let r = 0; r < data.length; r++) {
-      if (data[r].tag == tags[i]) {
-        document.querySelector(`#my-video${r}`).style.opacity = 1;
-        document.querySelector(`#my-video${r}`).style.zIndex = 10;
-        videojs(`my-video${r}`).muted(false);
-        videojs(`my-video${r}`).volume(0.4);
+      for (let r = 0; r < data.length; r++) {
+        if (data[r].tag == tags[i]) {
+          document.querySelector(`#my-video${r}`).style.opacity = 1;
+          document.querySelector(`#my-video${r}`).style.zIndex = 10;
+          videojs(`my-video${r}`).muted(false);
+          videojs(`my-video${r}`).volume(0.4);
+        }
+      }
+    });
+    document.querySelector(".tags").appendChild(btnsTags[i]);
+  }
+}
+
+let btnsPeople = [];
+function peopleButtons() {
+  for (let i = 0; i < people.length; i++) {
+    btnsPeople.push(document.createElement("p"));
+    btnsPeople[i].innerHTML = people[i];
+    btnsPeople[i].classList.add("button-class");
+    btnsPeople[i].addEventListener("click", () => {
+      switchPeople(people[i]);
+    });
+    document.querySelector(".people").appendChild(btnsPeople[i]);
+  }
+}
+
+function switchPeople(person) {
+  var ele = document.getElementsByClassName("box");
+  for (var i = 0; i < ele.length; i++) {
+    ele[i].style.width = "25vw";
+  }
+  for (let i = 0; i < data.length; i++) {
+    videojs(`my-video${i}`).src({ type: "video/mp4", src: placeholderVideo() });
+    // videojs(`my-video${i}`).src({ type: "video/mp4", src: placeholderList[3] });
+    videojs(`my-video${i}`).currentTime(Math.random() * 2);
+  }
+  data = [];
+
+  //amir
+  if (person === people[0]) {
+    for (let i = 0; i < root.length; i++) {
+      if (root[i].person === "a") {
+        data.push(root[i]);
       }
     }
-  });
-  document.querySelector(".tags").appendChild(btns[i]);
+  }
+  //omama
+  else if (person === people[1]) {
+    for (let i = 0; i < root.length; i++) {
+      if (root[i].person === "o") data.push(root[i]);
+    }
+  }
+  //sophia
+  else if (person === people[2]) {
+    for (let i = 0; i < root.length; i++) {
+      if (root[i].person === "s") data.push(root[i]);
+    }
+  }
+  items = "";
+
+  for (let i = 0; i < data.length; i++) {
+    videojs(`my-video${i}`).src({ type: "video/mp4", src: data[i].file });
+  }
 }
 
 function filterVideos(setTag) {
@@ -432,9 +496,10 @@ function filterVideos(setTag) {
   }
 }
 
-for (let i = 0; i < data.length; i++) {
-  items += `<div class="box" href="../index.html">
-  <video
+function createVideos() {
+  for (let i = 0; i < data.length; i++) {
+    items += `<div class="box" href="../index.html">
+    <video
     onmouseover="mouseHover(${i})"
     onmouseout="mouseExit(${i})"
     onclick="clicked(${i})"
@@ -446,11 +511,15 @@ for (let i = 0; i < data.length; i++) {
     fluid="true"
     src="${data[i].file}"
     data-setup="{}"
-  ></video>
-</div>`;
+    ></video>
+    </div>`;
+    setTimeout(() => {
+      videojs(`my-video${i}`).playbackRate(2);
+    }, 100);
+  }
+  container.innerHTML = items;
 }
 
-container.innerHTML = items;
 function mouseHover(index) {
   for (let r = 0; r < data.length; r++) {
     videojs(`my-video${r}`).muted(true);
@@ -458,6 +527,9 @@ function mouseHover(index) {
   videojs(`my-video${index}`).muted(false);
   document.querySelector(`#my-video${index}`).style.scale = 1.1;
   document.querySelector(`#my-video${index}`).style.zIndex = 100;
+  setTimeout(() => {
+    videojs(`my-video${index}`).playbackRate(1);
+  }, 100);
   soundMake();
 }
 
@@ -465,14 +537,10 @@ function mouseExit(index) {
   videojs(`my-video${index}`).muted(true);
   document.querySelector(`#my-video${index}`).style.scale = 1;
   document.querySelector(`#my-video${index}`).style.zIndex = 1;
+  setTimeout(() => {
+    videojs(`my-video${index}`).playbackRate(2);
+  }, 100);
 }
-
-// function setFiles() {
-//   for (let i = 0; i < data.length; i++) {
-//     // if (data[i].person === "o")
-//     files.push(data[i].file);
-//   }
-// }
 
 function clicked(index) {
   console.log("ok");
@@ -492,3 +560,11 @@ function shuffleArray(array) {
 function soundMake() {
   audio.play();
 }
+
+function placeholderVideo() {
+  return placeholderList[Math.floor(Math.random() * placeholderList.length)];
+}
+makeButtons();
+peopleButtons();
+shuffleArray(data);
+createVideos();
