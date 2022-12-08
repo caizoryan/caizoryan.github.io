@@ -382,6 +382,7 @@ const data = [
   },
 ];
 
+let durationInterval;
 var myPlayer = videojs("my-video");
 let tags = [];
 var audio = new Audio("../click.mp3");
@@ -396,6 +397,14 @@ for (let i = 0; i < data.length; i++) {
 }
 
 function changeVideo(index) {
+  clearInterval(durationInterval);
+  durationInterval = setInterval(() => {
+    document.querySelector(".duration").style.width = `${
+      (myPlayer.currentTime() / myPlayer.duration()) * 100
+    }%`;
+    console.log(`total duration = ${myPlayer.duration()}`);
+    console.log(`current time is = ${myPlayer.currentTime()}`);
+  }, 300);
   myPlayer.src({ type: "video/mp4", src: data[index].file });
   document.querySelector(".question").innerHTML = data[index].question;
 
@@ -436,7 +445,6 @@ function look(des) {
   }
   let r = Math.floor(Math.random() * indexList.length);
 
-  // return
   if (indexList.length === 0) return lookEmpty(des);
   else return indexList[r];
 }

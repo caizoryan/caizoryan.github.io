@@ -456,8 +456,8 @@ function switchPeople(person) {
     ele[i].style.width = "25vw";
   }
   for (let i = 0; i < data.length; i++) {
-    videojs(`my-video${i}`).src({ type: "video/mp4", src: placeholderVideo() });
-    // videojs(`my-video${i}`).src({ type: "video/mp4", src: placeholderList[3] });
+    // videojs(`my-video${i}`).src({ type: "video/mp4", src: placeholderVideo() });
+    videojs(`my-video${i}`).src({ type: "video/mp4", src: "videos/p5.mp4" });
     videojs(`my-video${i}`).currentTime(Math.random() * 2);
   }
   data = [];
