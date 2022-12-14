@@ -385,12 +385,14 @@ let root = [
 let data = root;
 
 const people = ["Room 642", "Gerrard St E", "Krispy Kreme"];
+
 const placeholderList = [
   "videos/p1.mp4",
   "videos/p2.mp4",
   "videos/p3.mp4",
   "videos/p4.mp4",
 ];
+
 let currentIndex;
 
 var audio = new Audio("../click.mp3");
@@ -455,8 +457,11 @@ function switchPeople(person) {
   for (var i = 0; i < ele.length; i++) {
     ele[i].style.width = "25vw";
   }
+
   for (let i = 0; i < data.length; i++) {
-    // videojs(`my-video${i}`).src({ type: "video/mp4", src: placeholderVideo() });
+    document.querySelector(`#my-video${i}`).style.opacity = 1;
+    document.querySelector(`#my-video${i}`).style.zIndex = 1;
+    videojs(`my-video${i}`).muted(true);
     videojs(`my-video${i}`).src({ type: "video/mp4", src: "videos/p5.mp4" });
     videojs(`my-video${i}`).currentTime(Math.random() * 2);
   }
@@ -559,6 +564,26 @@ function shuffleArray(array) {
 
 function soundMake() {
   audio.play();
+}
+
+function reset() {
+  var ele = document.getElementsByClassName("box");
+  data = [];
+  for (const x of root) data.push(x);
+
+  for (var i = 0; i < ele.length; i++) {
+    ele[i].style.width = "20vw";
+  }
+
+  for (let i = 0; i < data.length; i++) {
+    document.querySelector(`#my-video${i}`).style.opacity = 1;
+    document.querySelector(`#my-video${i}`).style.zIndex = 1;
+    videojs(`my-video${i}`).muted(true);
+    videojs(`my-video${i}`).src({ type: "video/mp4", src: data[i].file });
+    setTimeout(() => {
+      videojs(`my-video${i}`).playbackRate(2);
+    }, 100);
+  }
 }
 
 function placeholderVideo() {
