@@ -293,6 +293,14 @@ const data = [
 
   // sophia
   {
+    file: "videos/01SOOPEN.mp4",
+    tag: "connection",
+    question: "Why do you love conversation?",
+    person: "s",
+    index: 0,
+    visited: false,
+  },
+  {
     file: "videos/02SOEM.mp4",
     tag: "empathy",
     question: "What contributes to having a long engaging conversation?",
@@ -376,6 +384,15 @@ const data = [
     tag: "thinking",
     question:
       "Do you feel your thoughts and ideas change while you are in a conversation with someone?",
+    person: "s",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/12SOCON.mp4",
+    tag: "connection",
+    question:
+      "Is there anything else you would like to add about why you love conversation?",
     person: "s",
     index: 0,
     visited: false,

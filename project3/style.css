@@ -115,4 +115,30 @@ video {
   background-color: rgb(255, 90, 90);
   width: 0%;
   height: 12px;
+}
+
+.goGrid {
+  z-index: 210;
+  position: fixed;
+  left: 48vw;
+  bottom: 20px;
+}
+.goGrid a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}
+.goGrid p {
+  cursor: pointer;
+  opacity: 0.6;
+  text-align: center;
+  padding: 10px;
+  width: 100px;
+  background-color: rgb(244, 67, 67);
+  color: white;
+  text-transform: uppercase;
+}
+.goGrid p:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }/*# sourceMappingURL=style.css.map */
