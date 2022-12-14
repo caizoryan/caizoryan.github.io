@@ -11,7 +11,8 @@ const root = [
   {
     file: "videos/02OMCO.mp4",
     tag: "connection",
-    question: "What contributes to having a long engaging conversation?",
+    question:
+      "Do you think conversation is an integral part to build a connection?",
     person: "o",
     index: 0,
     visited: false,
@@ -27,7 +28,8 @@ const root = [
   {
     file: "videos/04OMCH.mp4",
     tag: "change",
-    question: "What contributes to having a long engaging conversation?",
+    question:
+      "Do you think you can build a connection through conversation with a pet/animal?",
     person: "o",
     index: 0,
     visited: false,
@@ -35,7 +37,24 @@ const root = [
   {
     file: "videos/05OMCO.mp4",
     tag: "connection",
-    question: "What contributes to having a long engaging conversation?",
+    question:
+      "Is being understood in conversation a necessary element to build a connection?",
+    person: "o",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/06OMDE2.mp4",
+    tag: "debate",
+    question: "Can debates help in building a connection?",
+    person: "o",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/06OMDE2.mp4",
+    tag: "open-minded",
+    question: "Can debates help in building a connection?",
     person: "o",
     index: 0,
     visited: false,
@@ -43,7 +62,8 @@ const root = [
   {
     file: "videos/11OMCU.mp4",
     tag: "culture",
-    question: "What contributes to having a long engaging conversation?",
+    question:
+      "What was the longest conversation you had and what do you think contributed to it being that long?",
     person: "o",
     index: 0,
     visited: false,
@@ -51,7 +71,17 @@ const root = [
   {
     file: "videos/13OMBAD.mp4",
     tag: "bad conversation",
-    question: "What contributes to having a long engaging conversation?",
+    question:
+      "Is having an open mind important to have an engaging conversation?",
+    person: "o",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/13OMBAD.mp4",
+    tag: "open-minded",
+    question:
+      "Is having an open mind important to have an engaging conversation?",
     person: "o",
     index: 0,
     visited: false,
@@ -75,7 +105,41 @@ const root = [
   {
     file: "videos/16OMEM.mp4",
     tag: "empathy",
+    question:
+      "What is the most important factor to make sure the other person has understood what you were saying in a conversation?",
+    person: "o",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/18OMPE.mp4",
+    tag: "people",
     question: "What contributes to having a long engaging conversation?",
+    person: "o",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/18OMPE.mp4",
+    tag: "empathy",
+    question: "What contributes to having a long engaging conversation?",
+    person: "o",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/19OMLA.mp4",
+    tag: "language",
+    question: "Is language the most efficient way to engage in conversation?",
+    person: "o",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/20OMART.mp4",
+    tag: "art",
+    question:
+      "Is language more ambiguous or art and design as a means of communication?",
     person: "o",
     index: 0,
     visited: false,
@@ -83,7 +147,7 @@ const root = [
   {
     file: "videos/21OMLA.mp4",
     tag: "language",
-    question: "What contributes to having a long engaging conversation?",
+    question: "Is language the most efficient way to engage in conversation?",
     person: "o",
     index: 0,
     visited: false,
@@ -91,7 +155,8 @@ const root = [
   {
     file: "videos/22OMLAART.mp4",
     tag: "language",
-    question: "What contributes to having a long engaging conversation?",
+    question:
+      "Is language more ambiguous or art and design as a means of communication?",
     person: "o",
     index: 0,
     visited: false,
@@ -99,7 +164,8 @@ const root = [
   {
     file: "videos/22OMLAART.mp4",
     tag: "art",
-    question: "What contributes to having a long engaging conversation?",
+    question:
+      "Is language more ambiguous or art and design as a means of communication?",
     person: "o",
     index: 0,
     visited: false,
@@ -107,7 +173,8 @@ const root = [
   {
     file: "videos/23OMART.mp4",
     tag: "art",
-    question: "What contributes to having a long engaging conversation?",
+    question:
+      "Do you think design/art (film, music, posters, websites, etc) are a form of conversation?",
     person: "o",
     index: 0,
     visited: false,
@@ -115,7 +182,8 @@ const root = [
   {
     file: "videos/24OMLAART.mp4",
     tag: "art",
-    question: "What contributes to having a long engaging conversation?",
+    question:
+      "Do you think design/art (film, music, posters, websites, etc) are a form of conversation?",
     person: "o",
     index: 0,
     visited: false,
@@ -131,31 +199,18 @@ const root = [
   {
     file: "videos/25OMEM.mp4",
     tag: "empathy",
-    question: "What contributes to having a long engaging conversation?",
+    question:
+      "In your conversations, when do you feel that you have been understood?",
     person: "o",
     index: 0,
     visited: false,
   },
-  {
-    file: "videos/19OMLA.mp4",
-    tag: "language",
-    question: "What contributes to having a long engaging conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/20OMART.mp4",
-    tag: "art",
-    question: "What contributes to having a long engaging conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
+
   {
     file: "videos/26OMTH.mp4",
     tag: "thinking",
-    question: "What contributes to having a long engaging conversation?",
+    question:
+      "Do you feel your thoughts and ideas changing when you are conversing with someone?",
     person: "o",
     index: 0,
     visited: false,
@@ -163,7 +218,8 @@ const root = [
   {
     file: "videos/27OMCON.mp4",
     tag: "people",
-    question: "Why do you love conversation, Conclusion?",
+    question:
+      "Is there anything else that you would like to add about why do you love conversation?",
     person: "o",
     index: 0,
     visited: false,
@@ -172,7 +228,7 @@ const root = [
   {
     file: "videos/01AMDE.mp4",
     tag: "debate",
-    question: "Why do you love conversation? Opening",
+    question: "Why do you love conversation?",
     person: "a",
     index: 0,
     visited: false,
@@ -180,7 +236,7 @@ const root = [
   {
     file: "videos/02AMBAD.mp4",
     tag: "bad conversation",
-    question: "Why do you love conversation? Opening",
+    question: "Why do you love conversation?",
     person: "a",
     index: 0,
     visited: false,
@@ -188,7 +244,8 @@ const root = [
   {
     file: "videos/03AMPE.mp4",
     tag: "people",
-    question: "Why do you love conversation? Opening",
+    question:
+      "Think of the longest conversation you’ve had, what about it specifically allowed you to or made you want to talk for that long? ",
     person: "a",
     index: 0,
     visited: false,
@@ -196,7 +253,8 @@ const root = [
   {
     file: "videos/04AMCU.mp4",
     tag: "culture",
-    question: "Why do you love conversation? Opening",
+    question:
+      "What is the most important factor to have a long engaging conversation?",
     person: "a",
     index: 0,
     visited: false,
@@ -205,7 +263,8 @@ const root = [
   {
     file: "videos/05AMCH.mp4",
     tag: "change",
-    question: "Why do you love conversation, Conclusion?",
+    question:
+      "Do you think it is important to have a good subject of conversation or is it irrelevant?",
     person: "a",
     index: 0,
     visited: false,
@@ -213,7 +272,8 @@ const root = [
   {
     file: "videos/06AMPE.mp4",
     tag: "people",
-    question: "Why do you love conversation, Conclusion?",
+    question:
+      "Do you think it is important to have a good subject of conversation or is it irrelevant?",
     person: "a",
     index: 0,
     visited: false,
@@ -221,7 +281,8 @@ const root = [
   {
     file: "videos/07AMTHDEOP.mp4",
     tag: "thinking",
-    question: "Why do you love conversation, Conclusion?",
+    question:
+      "Do you think it is important to have a good subject of conversation or is it irrelevant?",
     person: "a",
     index: 0,
     visited: false,
@@ -229,7 +290,8 @@ const root = [
   {
     file: "videos/07AMTHDEOP.mp4",
     tag: "debate",
-    question: "Why do you love conversation, Conclusion?",
+    question:
+      "Do you think it is important to have a good subject of conversation or is it irrelevant?",
     person: "a",
     index: 0,
     visited: false,
@@ -237,15 +299,17 @@ const root = [
   {
     file: "videos/07AMTHDEOP.mp4",
     tag: "open-minded",
-    question: "Why do you love conversation, Conclusion?",
+    question:
+      "Do you think it is important to have a good subject of conversation or is it irrelevant?",
     person: "a",
     index: 0,
     visited: false,
   },
   {
     file: "videos/10AMCU.mp4",
-    tag: "open-minded",
-    question: "Why do you love conversation, Conclusion?",
+    tag: "culture",
+    question:
+      "Do you think it is important to have a good subject of conversation or is it irrelevant?",
     person: "a",
     index: 0,
     visited: false,
@@ -253,7 +317,8 @@ const root = [
   {
     file: "videos/11AMLA.mp4",
     tag: "language",
-    question: "Why do you love conversation, Conclusion?",
+    question:
+      "Do you think exchanging words is the most optimal way of conversing?",
     person: "a",
     index: 0,
     visited: false,
@@ -261,7 +326,8 @@ const root = [
   {
     file: "videos/12AMLACU.mp4",
     tag: "language",
-    question: "Why do you love conversation, Conclusion?",
+    question:
+      "Do you think exchanging words is the most optimal way of conversing?",
     person: "a",
     index: 0,
     visited: false,
@@ -269,7 +335,8 @@ const root = [
   {
     file: "videos/12AMLACU.mp4",
     tag: "culture",
-    question: "Why do you love conversation, Conclusion?",
+    question:
+      "Do you think exchanging words is the most optimal way of conversing?",
     person: "a",
     index: 0,
     visited: false,
@@ -277,7 +344,8 @@ const root = [
   {
     file: "videos/14AMLA.mp4",
     tag: "language",
-    question: "Why do you love conversation, Conclusion?",
+    question:
+      "Do you think exchanging words is the most optimal way of conversing?",
     person: "a",
     index: 0,
     visited: false,
@@ -285,7 +353,62 @@ const root = [
   {
     file: "videos/15AMART.mp4",
     tag: "art",
-    question: "Why do you love conversation, Conclusion?",
+    question:
+      "Do you think exchanging words is the most effective way of conversing?",
+    person: "a",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/18AMEM.mp4",
+    tag: "empathy",
+    question:
+      "In your conversations, when do you feel that you have been understood?",
+    person: "a",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/19AMEM.mp4",
+    tag: "empathy",
+    question:
+      "In your conversations, when do you feel that you have been understood?",
+    person: "a",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/20AMEM.mp4",
+    tag: "empathy",
+    question:
+      "What is the most important factor to make sure the other person has understood what you had to say?",
+    person: "a",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/21AMTH.mp4",
+    tag: "thinking",
+    question:
+      "Do you feel your thoughts and ideas changing when you are conversing with someone?",
+    person: "a",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/21AMTH.mp4",
+    tag: "tangent?",
+    question:
+      "Do you feel your thoughts and ideas changing when you are conversing with someone?",
+    person: "a",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/22AMCON.mp4",
+    tag: "connection",
+    question:
+      "Is there anything else you would like to add about why you love conversation?",
     person: "a",
     index: 0,
     visited: false,
@@ -303,6 +426,14 @@ const root = [
   {
     file: "videos/02SOEM.mp4",
     tag: "empathy",
+    question: "What contributes to having a long engaging conversation?",
+    person: "s",
+    index: 0,
+    visited: false,
+  },
+  {
+    file: "videos/02SOEM.mp4",
+    tag: "tangent?",
     question: "What contributes to having a long engaging conversation?",
     person: "s",
     index: 0,
@@ -607,6 +738,7 @@ function reset() {
 function placeholderVideo() {
   return placeholderList[Math.floor(Math.random() * placeholderList.length)];
 }
+
 makeButtons();
 peopleButtons();
 shuffleArray(data);
