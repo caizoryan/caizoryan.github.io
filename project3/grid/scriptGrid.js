@@ -1,4 +1,4 @@
-let root = [
+const root = [
   //Omama
   {
     file: "videos/01OMPE.mp4",
@@ -293,6 +293,14 @@ let root = [
 
   // sophia
   {
+    file: "videos/01SOOPEN.mp4",
+    tag: "connection",
+    question: "Why do you love conversation?",
+    person: "s",
+    index: 0,
+    visited: false,
+  },
+  {
     file: "videos/02SOEM.mp4",
     tag: "empathy",
     question: "What contributes to having a long engaging conversation?",
@@ -380,9 +388,19 @@ let root = [
     index: 0,
     visited: false,
   },
+  {
+    file: "videos/12SOCON.mp4",
+    tag: "connection",
+    question:
+      "Is there anything else you would like to add about why you love conversation?",
+    person: "s",
+    index: 0,
+    visited: false,
+  },
 ];
 
-let data = root;
+let data = [];
+for (const x of root) data.push(x);
 
 const people = ["Room 642", "Gerrard St E", "Krispy Kreme"];
 
@@ -570,7 +588,7 @@ function reset() {
   var ele = document.getElementsByClassName("box");
   data = [];
   for (const x of root) data.push(x);
-
+  shuffleArray(data);
   for (var i = 0; i < ele.length; i++) {
     ele[i].style.width = "20vw";
   }
