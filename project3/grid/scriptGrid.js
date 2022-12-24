@@ -697,7 +697,6 @@ function mouseExit(index) {
 }
 
 function clicked(index) {
-  console.log("ok");
   localStorage.setItem("currentIndex", data[index].index);
   location.href = "../index.html";
 }
