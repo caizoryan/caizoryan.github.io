@@ -1,32 +1,130 @@
-<head>
-  <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-  <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
-</head>
+<!-- 
+  /~\
+C oo
+_( ^)
+/   ~\
+-aaryan -->
 
-<body>
-  <div class="question"></div>
-  <div class="visited"></div>
-  <div class="tags"></div>
-  <div class="container">
-    <video
-      id="my-video"
-      class="video-js"
-      loop
-      fill="true"
-      preload="auto"
-      autoplay="true"
-      poster="MY_VIDEO_POSTER.jpg"
-      data-setup="{}"
-    ></video>
-  </div>
-  <div class="goGrid">
-    <a href="./grid/index.html"><p>Grid View</p></a>
-  </div>
+<!-- Hello to whoever is browsing this code -->
+<!-- Feel free to use any of this in your projects, if you want help understanding/implementing anything, dont hesitate to contact me -->
 
-  <div class="duration"></div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front Page</title>
+  </head>
+  <style>
+    @font-face {
+      font-family: ari;
+      src: url("../ari.woff") format("woff");
+    }
+    * {
+      font-family: "ari";
+      font-weight: 100;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <body>
+    <div
+      class="entry"
+      style="
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        display: flex;
+        overflow: hidden;
+      "
+    >
+      <div
+        class="column"
+        style="
+          width: 600px;
+          margin-top: auto;
+          margin-bottom: 100px;
+          margin-left: 100px;
+        "
+      >
+        <div class="info" style="display: none">
+          <p style="width: 400px">
+            Before you enter the site, you must
+            <span style="font-weight: 400">enable autoplay</span> in your
+            browser for this website, if you don't do this&mdash;the website
+            <span style="font-weight: 400">will not work</span>
+          </p>
+          <a
+            href="/grid"
+            style="
+              padding: 10px 10px;
+              width: 150px;
+              display: block;
+              margin-top: 10px;
+              cursor: pointer;
+              text-align: center;
+              text-decoration: none;
+              background-color: rgb(255, 84, 84);
+              color: white;
+            "
+          >
+            actually enter site
+          </a>
+        </div>
+        <p
+          id="button"
+          onclick="show()"
+          href=""
+          style="
+            padding: 10px 10px;
+            cursor: pointer;
+            width: 100px;
+            text-align: center;
+            text-decoration: none;
+            background-color: rgb(255, 84, 84);
+            color: white;
+          "
+        >
+          enter site
+        </p>
+        <h1 style="margin: 20px 0px; margin-top: 100px">
+          Too Long Didn't Listen ((at all))
+        </h1>
+        <p style="margin-left: 50px">
+          Is a video archive of interview excerpts revolving around the topic,
+          "Why&nbsp;do&nbsp;you love&nbsp;conversation?" The work takes the form
+          of a modular narrative and encourages the viewer create their own path
+          through the archive, choosing which interviews to watch and in what
+          order. In hopes that each visitor gets to explore the topic of
+          conversation in their own way, and to discover their own reasons for
+          loving this most fundamental of human experiences.
+        </p>
+      </div>
+    </div>
+  </body>
+  <script>
+    function show() {
+      document.querySelector("#button").style.display = "none";
+      document.querySelector(".info").style.display = "block";
+    }
+  </script>
+</html>
 
-  <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
-  <script src="script.js"></script>
-</body>
+<!-- 
+....................................................
+....................................................
+........................./\.........................
+..................______/__\_______.................
+..................||-------------||.................
+..................||             ||.................
+..................||    \|||/    ||.................
+..................||   [ @-@ ]   ||.................
+..................||    ( ' )    ||.......       ...
+..................||    _(O)_    ||.......|EXIT |...
+..................||   / >=< \   ||.......|==>> |...
+..................||__/_|_:_|_\__||.................
+..................-----------------.................
+....................................................
+.................................................... 
+Monkey with a bowtie in the museum-->

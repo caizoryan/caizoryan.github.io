@@ -1,560 +1,34 @@
-const root = [
-  //Omama
-  {
-    file: "videos/01OMPE.mp4",
-    tag: "people",
-    question: "Why Do you love conversation, Opening",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/02OMCO.mp4",
-    tag: "connection",
-    question:
-      "Do you think conversation is an integral part to build a connection?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/03OMLA.mp4",
-    tag: "language",
-    question: "What contributes to having a long engaging conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/04OMCH.mp4",
-    tag: "change",
-    question:
-      "Do you think you can build a connection through conversation with a pet/animal?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/05OMCO.mp4",
-    tag: "connection",
-    question:
-      "Is being understood in conversation a necessary element to build a connection?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/06OMDE2.mp4",
-    tag: "debate",
-    question: "Can debates help in building a connection?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/06OMDE2.mp4",
-    tag: "open-minded",
-    question: "Can debates help in building a connection?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/11OMCU.mp4",
-    tag: "culture",
-    question:
-      "What was the longest conversation you had and what do you think contributed to it being that long?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/13OMBAD.mp4",
-    tag: "bad conversation",
-    question:
-      "Is having an open mind important to have an engaging conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/13OMBAD.mp4",
-    tag: "open-minded",
-    question:
-      "Is having an open mind important to have an engaging conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/14OMPE.mp4",
-    tag: "people",
-    question: "What contributes to having a long engaging conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/15OMOP.mp4",
-    tag: "open-minded",
-    question: "What contributes to having a long engaging conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/16OMEM.mp4",
-    tag: "empathy",
-    question:
-      "What is the most important factor to make sure the other person has understood what you were saying in a conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/18OMPE.mp4",
-    tag: "people",
-    question: "What contributes to having a long engaging conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/18OMPE.mp4",
-    tag: "empathy",
-    question: "What contributes to having a long engaging conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/19OMLA.mp4",
-    tag: "language",
-    question: "Is language the most efficient way to engage in conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/20OMART.mp4",
-    tag: "art",
-    question:
-      "Is language more ambiguous or art and design as a means of communication?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/21OMLA.mp4",
-    tag: "language",
-    question: "Is language the most efficient way to engage in conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/22OMLAART.mp4",
-    tag: "language",
-    question:
-      "Is language more ambiguous or art and design as a means of communication?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/22OMLAART.mp4",
-    tag: "art",
-    question:
-      "Is language more ambiguous or art and design as a means of communication?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/23OMART.mp4",
-    tag: "art",
-    question:
-      "Do you think design/art (film, music, posters, websites, etc) are a form of conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/24OMLAART.mp4",
-    tag: "art",
-    question:
-      "Do you think design/art (film, music, posters, websites, etc) are a form of conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/24OMLAART.mp4",
-    tag: "language",
-    question: "What contributes to having a long engaging conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/25OMEM.mp4",
-    tag: "empathy",
-    question:
-      "In your conversations, when do you feel that you have been understood?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-
-  {
-    file: "videos/26OMTH.mp4",
-    tag: "thinking",
-    question:
-      "Do you feel your thoughts and ideas changing when you are conversing with someone?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/27OMCON.mp4",
-    tag: "people",
-    question:
-      "Is there anything else that you would like to add about why do you love conversation?",
-    person: "o",
-    index: 0,
-    visited: false,
-  },
-
-  {
-    file: "videos/01AMDE.mp4",
-    tag: "debate",
-    question: "Why do you love conversation?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/02AMBAD.mp4",
-    tag: "bad conversation",
-    question: "Why do you love conversation?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/03AMPE.mp4",
-    tag: "people",
-    question:
-      "Think of the longest conversation you’ve had, what about it specifically allowed you to or made you want to talk for that long? ",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/04AMCU.mp4",
-    tag: "culture",
-    question:
-      "What is the most important factor to have a long engaging conversation?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-
-  {
-    file: "videos/05AMCH.mp4",
-    tag: "change",
-    question:
-      "Do you think it is important to have a good subject of conversation or is it irrelevant?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/06AMPE.mp4",
-    tag: "people",
-    question:
-      "Do you think it is important to have a good subject of conversation or is it irrelevant?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/07AMTHDEOP.mp4",
-    tag: "thinking",
-    question:
-      "Do you think it is important to have a good subject of conversation or is it irrelevant?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/07AMTHDEOP.mp4",
-    tag: "debate",
-    question:
-      "Do you think it is important to have a good subject of conversation or is it irrelevant?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/07AMTHDEOP.mp4",
-    tag: "open-minded",
-    question:
-      "Do you think it is important to have a good subject of conversation or is it irrelevant?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/10AMCU.mp4",
-    tag: "culture",
-    question:
-      "Do you think it is important to have a good subject of conversation or is it irrelevant?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/11AMLA.mp4",
-    tag: "language",
-    question:
-      "Do you think exchanging words is the most optimal way of conversing?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/12AMLACU.mp4",
-    tag: "language",
-    question:
-      "Do you think exchanging words is the most optimal way of conversing?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/12AMLACU.mp4",
-    tag: "culture",
-    question:
-      "Do you think exchanging words is the most optimal way of conversing?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/14AMLA.mp4",
-    tag: "language",
-    question:
-      "Do you think exchanging words is the most optimal way of conversing?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/15AMART.mp4",
-    tag: "art",
-    question:
-      "Do you think exchanging words is the most effective way of conversing?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/18AMEM.mp4",
-    tag: "empathy",
-    question:
-      "In your conversations, when do you feel that you have been understood?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/19AMEM.mp4",
-    tag: "empathy",
-    question:
-      "In your conversations, when do you feel that you have been understood?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/20AMEM.mp4",
-    tag: "empathy",
-    question:
-      "What is the most important factor to make sure the other person has understood what you had to say?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/21AMTH.mp4",
-    tag: "thinking",
-    question:
-      "Do you feel your thoughts and ideas changing when you are conversing with someone?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/21AMTH.mp4",
-    tag: "tangent?",
-    question:
-      "Do you feel your thoughts and ideas changing when you are conversing with someone?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/22AMCON.mp4",
-    tag: "connection",
-    question:
-      "Is there anything else you would like to add about why you love conversation?",
-    person: "a",
-    index: 0,
-    visited: false,
-  },
-
-  // sophia
-  {
-    file: "videos/01SOOPEN.mp4",
-    tag: "connection",
-    question: "Why do you love conversation?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/02SOEM.mp4",
-    tag: "empathy",
-    question: "What contributes to having a long engaging conversation?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/02SOEM.mp4",
-    tag: "tangent?",
-    question: "What contributes to having a long engaging conversation?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/03SOTH.mp4",
-    tag: "thinking",
-    question:
-      "Is critical thinking necessary to have an engaging conversation?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/04SOEM.mp4",
-    tag: "empathy",
-    question:
-      "Is critical thinking necessary to have an engaging conversation?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/05SOTH.mp4",
-    tag: "thinking",
-    question:
-      "Is empathy the most important factor to have an engaging conversation?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/06SOEM.mp4",
-    tag: "empathy",
-    question:
-      "Is empathy the most important factor to have an engaging conversation?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/07SOART.mp4",
-    tag: "art",
-    question: "Is art and design a form of conversation?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/08SOLAART.mp4",
-    tag: "language",
-    question:
-      "Is art and design more ambiguous as a form of conversation than language?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/09SOART.mp4",
-    tag: "language",
-    question:
-      "Is art and design more ambiguous as a form of conversation than language?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/10SOEM.mp4",
-    tag: "empathy",
-    question:
-      "In your conversations, when do you feel like you have been understood by the person you are conversing with?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/11SOTH.mp4",
-    tag: "thinking",
-    question:
-      "Do you feel your thoughts and ideas change while you are in a conversation with someone?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-  {
-    file: "videos/12SOCON.mp4",
-    tag: "connection",
-    question:
-      "Is there anything else you would like to add about why you love conversation?",
-    person: "s",
-    index: 0,
-    visited: false,
-  },
-];
-
+let root = [];
 let data = [];
-for (const x of root) data.push(x);
+
+fetch("data.json")
+  .then((response) => response.json())
+  .then((json) => {
+    root = json.data;
+    for (const x of root) data.push(x);
+    makeButtons();
+    peopleButtons();
+    for (let i = 0; i < data.length; i++) {
+      data[i].index = i;
+    }
+    shuffleArray(data);
+    createVideos();
+
+    // push indexes
+  });
 
 const people = ["Room 642", "Gerrard St E", "Krispy Kreme"];
-
-const placeholderList = [
-  "videos/p1.mp4",
-  "videos/p2.mp4",
-  "videos/p3.mp4",
-  "videos/p4.mp4",
-];
 
 let currentIndex;
 
 var audio = new Audio("../click.mp3");
+let loadedVideos = 0;
 
 let files = [];
 let players = [];
 let container = document.querySelector(".grid");
 let items = "";
 let tags = [];
-
-for (let i = 0; i < data.length; i++) {
-  data[i].index = i;
-}
 
 // make the buttons
 let btnsTags = [];
@@ -588,6 +62,7 @@ function makeButtons() {
   }
 }
 
+// make people buttons
 let btnsPeople = [];
 function peopleButtons() {
   for (let i = 0; i < people.length; i++) {
@@ -601,6 +76,7 @@ function peopleButtons() {
   }
 }
 
+// switch and filter people
 function switchPeople(person) {
   var ele = document.getElementsByClassName("box");
   for (var i = 0; i < ele.length; i++) {
@@ -643,6 +119,7 @@ function switchPeople(person) {
   }
 }
 
+// filter videos based on tags
 function filterVideos(setTag) {
   for (let i = 0; i < data.length; i++) {
     if (data[i].tag == setTag)
@@ -650,10 +127,12 @@ function filterVideos(setTag) {
   }
 }
 
+// setup function to take data and make a grid
 function createVideos() {
   for (let i = 0; i < data.length; i++) {
     items += `<div class="box" href="../index.html">
     <video
+    onloadeddata="loadedBro(${i})"
     onmouseover="mouseHover(${i})"
     onmouseout="mouseExit(${i})"
     onclick="clicked(${i})"
@@ -674,6 +153,7 @@ function createVideos() {
   container.innerHTML = items;
 }
 
+// unmute on hover
 function mouseHover(index) {
   for (let r = 0; r < data.length; r++) {
     videojs(`my-video${r}`).muted(true);
@@ -687,6 +167,7 @@ function mouseHover(index) {
   soundMake();
 }
 
+// mute on exit
 function mouseExit(index) {
   videojs(`my-video${index}`).muted(true);
   document.querySelector(`#my-video${index}`).style.scale = 1;
@@ -696,11 +177,13 @@ function mouseExit(index) {
   }, 100);
 }
 
+// when clicked save the index value and go to fullscreen
 function clicked(index) {
   localStorage.setItem("currentIndex", data[index].index);
-  location.href = "../index.html";
+  location.href = "../fullscreen/index.html";
 }
 
+// shuffle so the order is disrupted
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
@@ -710,10 +193,12 @@ function shuffleArray(array) {
   }
 }
 
+// sound make, uk?
 function soundMake() {
   audio.play();
 }
 
+// reset to orginal
 function reset() {
   var ele = document.getElementsByClassName("box");
   data = [];
@@ -734,11 +219,9 @@ function reset() {
   }
 }
 
-function placeholderVideo() {
-  return placeholderList[Math.floor(Math.random() * placeholderList.length)];
+// loaded bro, now remove loading screen
+function loadedBro(index) {
+  loadedVideos++;
+  if (loadedVideos === root.length)
+    document.querySelector("#loading").style.display = "none";
 }
-
-makeButtons();
-peopleButtons();
-shuffleArray(data);
-createVideos();
