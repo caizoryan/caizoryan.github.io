@@ -1,3 +1,7 @@
+// This script uses the arena wrapper I wrote to make working with the arena api easier. An updated version can be found on my github.
+// https://github.com/caizoryan/arena-wrapper
+
+// channel slug
 let process = new Arena("gd2-project1-process");
 process.everything().then((res) => console.log(res));
 
@@ -47,7 +51,6 @@ process.everything().then((res) => {
           ".process"
         ).innerHTML += `<a href="${element.image.display.url}"><img style="margin: 10px 0; width: 95%" src="${element.image.display.url}"></img></a>`;
     } else if (element.title == "output" || element.title == "input") {
-      console.log(element.title);
       if (element.class == "Image")
         document.querySelector(
           ".process"
