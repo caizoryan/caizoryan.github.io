@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <style>
+    @font-face {
+      font-family: regular;
+      src: url("oraclePlus.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: triple;
+      src: url("oracleTriple.woff") format("woff");
+        url("oracleTriple.woff2") format("woff2");
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+        color: white;
+        font-family: regular;
+    }
+    #back {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+    #pp {
+      z-index: 1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+    .parenthesis{
+        font-family: regular;
+        font-weight: 100;
+        position: fixed;
+        font-size: 80px;
+    }
+  </style>
+  <body>
+    <div
+      class="masterPage"
+      style="
+        z-index: 1000;
+        position: fixed;
+        left: 13vw;
+        top: 40vh;
+        font-size: 80px;
+      "
+    >
+      <p
+        id="master-slide-down"
+        style="
+          position: fixed;
+          right: 0;
+          bottom: -30px;
+          font-size: 80px;
+          color: white;
+          font-weight: 100;
+        "
+      >
+        12
+      </p>
+      <p
+        id="master-slide-up"
+        style="
+          position: fixed;
+          left: 0;
+          top: -30px;
+          font-size: 80px;
+          color: black;
+          font-weight: 100;
+        "
+      >
+        12
+      </p>
+      <p
+        id="master-input"
+        style="
+          position: fixed;
+          left: 0;
+          top: -10px;
+          font-size: 40px;
+          color: white;
+          font-weight: 100;
+        "
+      >
+        INPUT
+      </p>
+      <p
+        id="master-input"
+        style="
+          position: fixed;
+          right: 0;
+          bottom: -10px;
+          font-size: 40px;
+          color: black;
+          font-weight: 100;
+        "
+      >
+        OUTPUT
+      </p>
+    </div>
+    <div id="back"></div>
+    <div id="pp"></div>
+    <div
+      class="slide1"
+      style="position: fixed; left: 13vw; top: 40vh; color: white"
+    >
+      <span
+        id="input"
+        style="font-family: regular; font-size: 80px; font-weight: 100"
+        >type</span
+      ><span
+        id="output"
+        style="font-family: triple; font-size: 90px; text-transform: uppercase"
+        >&mdash;execution</span
+      >
+    </div>
+    <div class="parenthesis" id="parn1" style="top: 44vh; left: 11.5vw">((</div>
+    <div
+      class="parenthesis"
+      id="parn2"
+      style="top: 36vh; left: 74vw; font-weight: 400"
+    >
+      ))
+    </div>
+    <div class="slide2Container"></div>
+  </body>
+  <script src="sketch.js"></script>
+</html>

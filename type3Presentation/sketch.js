@@ -5,7 +5,7 @@ let height = canvas.offsetHeight;
 let currentSlide = 1;
 
 // code
-let slide2 = `<div class="slide2" style=" font-family: triple; text-transform: uppercase; line-height: 35px; z-index: 2; position: fixed; left: 38vw; top: 35vh; width: 600px; padding: 10px; font-size: 28px; background-color: rgb(255, 192, 0); color: white; " ><p id="slide2Text"> So how does this relate to the design of the exhibition? </p></div> `;
+let slide2 = `<div class="slide2" style=" font-family: regular; text-transform: uppercase; line-height: 35px; z-index: 2; position: fixed; left: 38vw; top: 35vh; width: 600px; padding: 10px; font-size: 28px; background-color: rgb(255, 192, 0); color: white; " ><p id="slide2Text"> So how does this relate to the design of the exhibition? </p></div> `;
 
 // p5
 const back = (p) => {
@@ -108,7 +108,7 @@ function changeSlideText() {
   if (currentSlide == 3) {
     let el = document.createElement("p");
     el.style.cssText =
-      "font-family: triple; text-transform: uppercase; line-height: 35px; z-index: 2; position: fixed; left: 35vw; top: 39vh; width: 600px; padding: 10px; font-size: 28px; background-color: rgb(255, 71, 0); color: white;";
+      "font-family: regular; text-transform: uppercase; line-height: 35px; z-index: 2; position: fixed; left: 35vw; top: 39vh; width: 600px; padding: 10px; font-size: 28px; background-color: rgb(255, 71, 0); color: white;";
     el.id = "slide3";
     el.innerText = `the desi${g}n ${o}f the ex${h}ibition acts as a bridge`;
     if (!document.getElementById("slide3"))
@@ -123,9 +123,9 @@ function changeSlideText() {
   if (currentSlide == 5) {
     let el = document.createElement("p");
     el.style.cssText =
-      "font-family: regular; text-transform: lowercase; line-height: 35px; z-index: 2; position: fixed; left: 36vw; top: 44vh; width: 600px; padding: 10px; font-size: 28px; background-color: rgb(26, 144, 255); color: white;";
+      "font-family: regular; text-transform: normal; line-height: 35px; z-index: 2; position: fixed; left: 36vw; top: 44vh; width: 600px; padding: 10px; font-size: 28px; background-color: rgb(26, 144, 255); color: white;";
     el.id = "slide5";
-    el.innerHTML = `input&mdash;ouput is perfect, it is a core concept that is intrinsic to humans, so little kids who know nothing can understand too!`;
+    el.innerHTML = `Input&mdash;Ouput is perfect, it is a core concept that is intrinsic to humans, so little kids who know nothing can understand too!`;
     if (!document.getElementById("slide5"))
       document.querySelector(".slide2Container").append(el);
   }
@@ -197,5 +197,8 @@ function changeSlideText() {
       el.id = "slide12";
       document.querySelector(".slide2Container").append(el);
     }
+  }
+  if (currentSlide == 13) {
+    window.location.href = "https://caizoryan.github.io/type3Execution";
   }
 }
